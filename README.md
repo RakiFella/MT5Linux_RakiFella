@@ -19,7 +19,7 @@ For an explanation of who should use mt5linux and why, see [Motivation and Use C
 4. Install this package on both **Windows** and **Linux** Python:
 
    ```bash
-   pip install mt5linux
+   pip install mt5linux_RakiFella
    ```
 
 ## Docker
