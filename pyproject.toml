@@ -3,7 +3,7 @@ requires = ["setuptools>=45", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mt5linux"
+name = "MT5Linux_RakiFella"
 version = "1.0.3"
 description = "MetaTrader5 for linux users"
 readme = "README.md"
@@ -18,7 +18,7 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["mt5linux*"]
+include = ["MT5Linux_RakiFella*"]
 
 [project.urls]
 Homepage = "https://github.com/lucas-campagna/mt5linux"
