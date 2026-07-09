@@ -19,7 +19,7 @@ For an explanation of who should use mt5linux and why, see [Motivation and Use C
 4. Install this package on both **Windows** and **Linux** Python:
 
    ```bash
-   pip install mt5linux_RakiFella
+   pip install MT5Linux_RakiFella
    ```
 
 ## Docker
@@ -34,23 +34,23 @@ Alternatively, you can run this library using Docker, see the [docs](https://git
 
    - **Windows** (native):
      ```bash
-     python -m mt5linux
+     python -m MT5Linux_RakiFella
      ```
 
    - **Linux** (with Wine):
      ```bash
-     wine python -m mt5linux
+     wine python -m MT5Linux_RakiFella
      ```
 
    The server accepts various options. View them with:
    ```bash
-   python -m mt5linux --help
+   python -m MT5Linux_RakiFella --help
    ```
 
 3. On the **Linux** side, use the library as usual:
 
    ```python
-   from mt5linux import MetaTrader5
+   from MT5Linux_RakiFella import MetaTrader5
 
    mt5 = MetaTrader5()
    mt5.initialize()
