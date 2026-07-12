@@ -196,7 +196,7 @@ sleep 5
 # Function to start the RPyC server
 start_rpyc_server() {
     echo "Starting RPyC server on ${MT5_HOST}:${RPYC_PORT}..."
-    WINEDLLOVERRIDES="mscoree=" WINEPREFIX=/opt/wineprefix wine C:\\Python311\\python.exe -m mt5linux &
+    WINEDLLOVERRIDES="mscoree=" WINEPREFIX=/opt/wineprefix wine C:\\Python311\\python.exe -m MT5Linux_RakiFella &
     RPYC_PID=$!
     echo "RPyC server started (PID: $RPYC_PID)"
 }
