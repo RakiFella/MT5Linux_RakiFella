@@ -1,4 +1,4 @@
-"""Command-line entrypoint for the mt5linux RPyC classic server."""
+"""Command-line entrypoint for the MT5Linux_RakiFella RPyC classic server."""
 
 from __future__ import annotations
 
