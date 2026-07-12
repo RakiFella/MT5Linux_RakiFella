@@ -21,19 +21,19 @@ RUN mkdir -p /tmp/python-install && \
     sleep 5 && \
     kill $XVFB_PID 2>/dev/null || true
 
-# Install mt5linux in wine python
+# Install MT5Linux_RakiFella in wine python
 RUN Xvfb :99 -screen 0 1024x768x16 >/dev/null 2>&1 & \
     XVFB_PID=$! && \
     sleep 2 && \
     WINEDLLOVERRIDES="mscoree=" DISPLAY=:99 WINEPREFIX=/opt/wineprefix wine C:\\Python311\\python.exe -m pip install --upgrade pip && \
-    WINEDLLOVERRIDES="mscoree=" DISPLAY=:99 WINEPREFIX=/opt/wineprefix wine C:\\Python311\\python.exe -m pip install mt5linux && \
+    WINEDLLOVERRIDES="mscoree=" DISPLAY=:99 WINEPREFIX=/opt/wineprefix wine C:\\Python311\\python.exe -m pip install MT5Linux_RakiFella && \
     kill $XVFB_PID 2>/dev/null || true
 
 # Clone noVNC
 RUN git clone --depth 1 https://github.com/novnc/noVNC.git /opt/noVNC && \
     rm -rf /opt/noVNC/.git
 
-# Runtime stage - Minimal Alpine image with Wine + Python + mt5linux
+# Runtime stage - Minimal Alpine image with Wine + Python + MT5Linux_RakiFella
 FROM alpine:3.20
 
 RUN apk add --no-cache \
