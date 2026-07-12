@@ -5,7 +5,7 @@ from PyInstaller.utils.hooks import collect_all, collect_submodules
 block_cipher = None
 
 datas = [
-    ('mt5linux', 'mt5linux'),
+    ('MT5Linux_RakiFella', 'MT5Linux_RakiFella'),
 ]
 
 hiddenimports = [
