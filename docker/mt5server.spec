@@ -18,9 +18,9 @@ hiddenimports = [
     'rpyc.lib',
     'rpyc.utils',
     'rpyc.utils.classic',
-    'mt5linux',
-    'mt5linux.metatrader5',
-    'mt5linux.constants',
+    'MT5Linux_RakiFella',
+    'MT5Linux_RakiFella.metatrader5',
+    'MT5Linux_RakiFella.constants',
     'ctypes',
     'socket',
     'threading',
@@ -39,7 +39,7 @@ hiddenimports = [
 ]
 
 a = Analysis(
-    ['mt5linux/__main__.py'],
+    ['MT5Linux_RakiFella/__main__.py'],
     pathex=[],
     binaries=[],
     datas=datas,
