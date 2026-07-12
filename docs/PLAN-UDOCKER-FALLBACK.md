@@ -1,14 +1,14 @@
-# Plan: Add udocker Fallback Support to mt5linux
+# Plan: Add udocker Fallback Support to MT5Linux_RakiFella
 
 ## Overview
-Create a Python helper module that programmatically detects and uses Docker or udocker to run the mt5linux container.
+Create a Python helper module that programmatically detects and uses Docker or udocker to run the MT5Linux_RakiFella container.
 
 ## Status
 Saved for later - NOT YET IMPLEMENTED
 
 ## Implementation Plan
 
-### 1. Create `mt5linux/_docker_helper.py`
+### 1. Create `MT5Linux_RakiFella/_docker_helper.py`
 
 Functions to implement:
 
@@ -35,18 +35,18 @@ def run_container(
     mt5_server: Optional[str] = None,
     novnc_port: int = 6081,
     mt5_port: int = 18812,
-    name: str = "mt5linux"
+    name: str = "MT5Linux_RakiFella"
 ) -> bool:
-    """Run the mt5linux container with the specified runtime and configuration."""
+    """Run the MT5Linux_RakiFella container with the specified runtime and configuration."""
 
-def stop_container(runtime: str, name: str = "mt5linux") -> bool:
-    """Stop the mt5linux container."""
+def stop_container(runtime: str, name: str = "MT5Linux_RakiFella") -> bool:
+    """Stop the MT5Linux_RakiFella container."""
 
-def remove_container(runtime: str, name: str = "mt5linux") -> bool:
-    """Remove the mt5linux container."""
+def remove_container(runtime: str, name: str = "MT5Linux_RakiFella") -> bool:
+    """Remove the MT5Linux_RakiFella container."""
 
-def get_container_status(runtime: str, name: str = "mt5linux") -> str:
-    """Get the current status of the mt5linux container."""
+def get_container_status(runtime: str, name: str = "MT5Linux_RakiFella") -> str:
+    """Get the current status of the MT5Linux_RakiFella container."""
 ```
 
 ### 2. Environment Variables Supported
@@ -66,10 +66,10 @@ Same as docker-compose.yml:
 - **udocker**: Uses `udocker run` (no `-d` flag, runs in foreground)
 - **udocker** may need `--user=root` or `--exec-mode=PROOT` for some containers
 
-### 5. Modify `mt5linux/__init__.py`
+### 5. Modify `MT5Linux_RakiFella/__init__.py`
 Export helper functions for public use:
 ```python
-from mt5linux._docker_helper import (
+from MT5Linux_RakiFella._docker_helper import (
     get_container_runtime,
     run_container,
     stop_container,
@@ -79,17 +79,17 @@ from mt5linux._docker_helper import (
 ```
 
 ## Files to Create/Modify
-- **Create**: `mt5linux/_docker_helper.py` (~150 lines)
-- **Modify**: `mt5linux/__init__.py` - add exports
+- **Create**: `MT5Linux_RakiFella/_docker_helper.py` (~150 lines)
+- **Modify**: `MT5Linux_RakiFella/__init__.py` - add exports
 
 ## Example Usage After Implementation
 ```python
-from mt5linux import get_container_runtime, run_mt5_container
+from MT5Linux_RakiFella import get_container_runtime, run_mt5_container
 
 runtime = get_container_runtime()  # Returns 'docker', 'udocker', or None
 if runtime:
     run_mt5_container(
-        image='lprett/mt5linux:latest',
+        image='lprett/MT5Linux_RakiFella:latest',
         mt5_login='12345678',
         mt5_password='password',
         mt5_server='Broker-Server'
