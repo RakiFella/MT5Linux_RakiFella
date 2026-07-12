@@ -1,6 +1,6 @@
 # Docker
 
-Run mt5linux using Docker for an isolated environment with Wine and all dependencies pre-configured.
+Run MT5Linux_RakiFella using Docker for an isolated environment with Wine and all dependencies pre-configured.
 
 ## Quick Start
 
@@ -18,7 +18,7 @@ Or run directly with docker:
 
 ```bash
 docker run -d \
-  --name mt5linux \
+  --name MT5Linux_RakiFella \
   -p 6081:6081 \
   -p 18812:18812 \
   -e MT5_HOST=0.0.0.0 \
@@ -26,7 +26,7 @@ docker run -d \
   -e MT5_LOGIN=12345678 \
   -e MT5_PASSWORD=your_password \
   -e MT5_SERVER=Broker-Server \
-  lprett/mt5linux:latest
+  lprett/MT5Linux_RakiFella:latest
 ```
 
 > The `latest` image tag is pre MT5 installation, there is a `mt5-installed` image tag which contains MT5 already installed.
@@ -34,9 +34,9 @@ docker run -d \
 ### Option 2: Build locally
 
 ```bash
-docker build -t mt5linux docker/
+docker build -t MT5Linux_RakiFella docker/
 docker run -d \
-  --name mt5linux \
+  --name MT5Linux_RakiFella \
   -p 6081:6081 \
   -p 18812:18812 \
   -e MT5_HOST=0.0.0.0 \
@@ -44,7 +44,7 @@ docker run -d \
   -e MT5_LOGIN=12345678 \
   -e MT5_PASSWORD=your_password \
   -e MT5_SERVER=Broker-Server \
-  mt5linux
+  MT5Linux_RakiFella
 ```
 
 ## Access
@@ -70,7 +70,7 @@ To automatically login to an MT5 account when the container starts, provide the 
 
 ```bash
 docker run -d \
-  --name mt5linux \
+  --name MT5Linux_RakiFella \
   -p 6081:6081 \
   -p 18812:18812 \
   -e MT5_HOST=0.0.0.0 \
@@ -78,7 +78,7 @@ docker run -d \
   -e MT5_LOGIN=12345678 \
   -e MT5_PASSWORD=your_password \
   -e MT5_SERVER=Broker-Server \
-  lprett/mt5linux:latest
+  lprett/MT5Linux_RakiFella:latest
 ```
 
 Or via docker-compose with a `.env` file:
@@ -117,7 +117,7 @@ MT5_SERVER=Broker-Server
 Once the container is running, connect from your Linux Python:
 
 ```python
-from mt5linux import MetaTrader5
+from MT5Linux_RakiFella import MetaTrader5
 
 mt5 = MetaTrader5(host="localhost", port=18812)
 mt5.initialize()
