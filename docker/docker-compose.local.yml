@@ -7,11 +7,13 @@ services:
     container_name: MT5Linux_RakiFella
     restart: unless-stopped
     ports:
-      - "8080:8080"
-      - "18812:18812"
+      - "127.0.0.1:5900:5900"
+      - "127.0.0.1:18812:18812"
     environment:
       - LOGIN=${MT5_LOGIN:-}
       - PASSWORD=${MT5_PASSWORD:-}
       - SERVER=${MT5_SERVER:-}
-      - MT5_HOST=0.0.0.0
+      - MT5_HOST=${MT5_HOST:-127.0.0.1}
       - RPYC_PORT=18812
+      - VNC_PORT=5900
+      - VNC_PASSWORD=${VNC_PASSWORD:?VNC_PASSWORD must be set}
