@@ -21,7 +21,7 @@ where = ["."]
 include = ["MT5Linux_RakiFella*"]
 
 [project.urls]
-Homepage = "https://github.com/lucas-campagna/mt5linux"
+Homepage = "https://github.com/RakiFella/MT5Linux_RakiFella"
 
 [project.optional-dependencies]
 dev = ["build", "twine"]
