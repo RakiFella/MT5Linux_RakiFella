@@ -48,9 +48,6 @@ RUN rm -rf /usr/lib/wine/i386-windows
 COPY --from=builder /opt/wineprefix /opt/wineprefix
 COPY --from=builder /opt/noVNC /opt/noVNC
 
-COPY docker/websockify /usr/bin/websockify
-RUN chmod +x /usr/bin/websockify
-
 COPY docker/mt5.tar.gz /app/
 COPY docker/run_mt5.sh /run_mt5.sh
 RUN chmod +x /run_mt5.sh

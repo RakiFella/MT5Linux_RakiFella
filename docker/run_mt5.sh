@@ -25,12 +25,6 @@ X11VNC_PID=$!
 
 sleep 1
 
-echo "Starting noVNC proxy on port $NOVNC_PORT..."
-websockify --web=/opt/noVNC $NOVNC_PORT localhost:$VNC_PORT &
-NOVNC_PID=$!
-
-sleep 1
-
 echo "Extracting MetaTrader 5..."
 tar -xzf mt5.tar.gz
 rm -f mt5.tar.gz
@@ -233,7 +227,6 @@ echo ""
 echo "All services started:"
 echo "  - Xvfb :0 (PID: $XVFB_PID)"
 echo "  - x11vnc :$VNC_PORT (PID: $X11VNC_PID)"
-echo "  - noVNC :$NOVNC_PORT (PID: $NOVNC_PID)"
 echo "  - MT5 (PID: $MT5_PID)"
 echo "  - RPyC server on ${MT5_HOST}:${RPYC_PORT} (PID: $RPYC_PID)"
 echo "  - Watchdog (PID: $WATCHDOG_PID)"
