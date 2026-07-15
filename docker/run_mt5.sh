@@ -20,7 +20,12 @@ fi
 echo "Xvfb started (PID: $XVFB_PID)"
 
 echo "Starting x11vnc on port $VNC_PORT..."
-x11vnc -display :0 -forever -rfbport $VNC_PORT -nopw &
+if [ -z "$VNC_PASSWORD" ]; then
+  echo "ERROR: VNC_PASSWORD must be set. Refusing to start with no VNC authentication."
+  exit 1
+fi
+x11vnc -storepasswd "$VNC_PASSWORD" /tmp/vncpasswd
+x11vnc -display :0 -forever -rfbport $VNC_PORT -rfbauth /tmp/vncpasswd &
 X11VNC_PID=$!
 
 sleep 1
